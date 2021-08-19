@@ -17,7 +17,7 @@ final class NewsViewModel {
     weak var delegate: NewsViewModelDelegate?
     
     private let client: APIClient
-    var cellViewModel: [NewsItem] = []
+    var cellViewModel: [NewsItemViewModel] = []
     
     init(client: APIClient, delegate: NewsViewModelDelegate) {
         self.client = client
@@ -27,7 +27,7 @@ final class NewsViewModel {
     func fetchNewsItem()  {
         
         if !Helper.isInternetAvailable() {
-            self.cellViewModel  = DataManager.fetchData()
+            self.cellViewModel  = DataManager.shared.fetchData()
             self.delegate?.onFetchCompleted(with: .none)
             return
         }

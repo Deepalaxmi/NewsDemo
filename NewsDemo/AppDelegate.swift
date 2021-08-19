@@ -14,9 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    static let shared = (UIApplication.shared.delegate as! AppDelegate)
+    
+    lazy var navigationRouter: AppNavigationRouter = {
+        AppNavigationRouter(viewFactory: ViewComposerFactory(), navigation: UINavigationController())
+    }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        navigationRouter.showNewsListing()
         return true
     }
 
@@ -90,4 +96,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-

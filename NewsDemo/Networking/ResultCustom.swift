@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Result<T> {
+enum ResultCustom<T> {
     case success(T)
     case failure(DataResponseError)
 }

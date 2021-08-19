@@ -29,7 +29,7 @@ class NewsTableViewCell: UITableViewCell {
         configure(cellViewModel: nil)
     }
     
-    func configure(cellViewModel: NewsItem?){
+    func configure(cellViewModel: NewsItemViewModel?){
         if let cellViewModel = cellViewModel{
             self.headlineLabel.text = cellViewModel.HeadLine
             

@@ -14,8 +14,12 @@ struct Constant {
     }
 }
 
-class DataManager {
-    static func saveData(dataList: [NewsItem]){
+class CacheDataManager {
+    static var shared = CacheDataManager()
+    private init() {
+    }
+    
+    static func saveData(dataList: [NewsItemViewModel]){
         do {
             let webData = try JSONEncoder().encode(dataList)
             UserDefaults.standard.set(webData, forKey: Constant.userDefault.newsItem)
@@ -24,12 +28,12 @@ class DataManager {
         }
     }
     
-    static func fetchData() -> [NewsItem]{
+    func fetchData() -> [NewsItemViewModel]{
         guard let data = UserDefaults.standard.data(forKey: Constant.userDefault.newsItem) else{
             return []
         }
         do{
-            let list = try JSONDecoder().decode([NewsItem].self, from: data)
+            let list = try JSONDecoder().decode([NewsItemViewModel].self, from: data)
             return list
         }catch{
             print(error.localizedDescription)

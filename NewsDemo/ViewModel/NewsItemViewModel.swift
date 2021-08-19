@@ -9,10 +9,10 @@
 import Foundation
 
 struct News: Codable {
-    var NewsItem: [NewsItem] = []
+    var NewsItem: [NewsItemViewModel] = []
 }
 
-struct NewsItem: Codable {
+struct NewsItemViewModel: Codable {
     var NewsItemId: String
     var HeadLine: String
     var DateLine: String

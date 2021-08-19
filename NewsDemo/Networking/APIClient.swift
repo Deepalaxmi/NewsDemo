@@ -17,33 +17,33 @@ extension APIClient{
         return URLSession.shared
     }
     
-    func get<T:Codable>(request: URLRequest, completion: @escaping (Result<T>) -> Void){
-        
+    func get<T:Codable>(request: URLRequest, completion: @escaping (ResultCustom<T>) -> Void){
+
         let task = session.dataTask(with: request) { (data, response, error) in
             
             guard error == nil else{
-                completion(Result.failure(DataResponseError.apiFailure(error?.localizedDescription ?? "API failure")))
+                completion(ResultCustom.failure(DataResponseError.apiFailure(error?.localizedDescription ?? "API failure")))
                 return
             }
             
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else{
-                completion(Result.failure(DataResponseError.badResponse))
+                completion(ResultCustom.failure(DataResponseError.badResponse))
                 return
             }
             guard let data = data else{
-                completion(Result.failure(DataResponseError.other))
+                completion(ResultCustom.failure(DataResponseError.other))
                 return
             }
             do{
                 let decoder = JSONDecoder()
                 let reponseDataObj = try decoder.decode(T.self, from: data)
                 DispatchQueue.main.async {
-                    completion(Result.success(reponseDataObj))
+                    completion(ResultCustom.success(reponseDataObj))
                 }
                 return
                 
             }catch{
-                completion(Result.failure(DataResponseError.decoding))
+                completion(ResultCustom.failure(DataResponseError.decoding))
                 return
             }
         }
