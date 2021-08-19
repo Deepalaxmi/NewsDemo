@@ -13,6 +13,8 @@ enum ViewType {
     case newsListing
     case newsListingWithFallback
     case newsListingWithMutlipleRetry
+    case newsListingWithDetail
+    case detailPage
 }
 
 protocol ViewComposableFactory {
@@ -49,6 +51,26 @@ final class ViewComposerFactory: ViewComposableFactory {
             let api = RemoteFeedLoaderAdapter(apiClient: NewsClient())
             let cache = LocalFeedLoaderAdapter(cache: CacheDataManager.shared)
             vc.service = api.retry(3).fallback(cache)
+            return vc
+        case .newsListingWithDetail:
+//            let vc = ListingWithDetailViewController(nibName: ListingWithDetailViewController.className, bundle: nil)
+            
+            //action handlers
+            let router = AppDelegate.shared.navigationRouter
+            let analyticsHandler = AnalyticsAdapter()
+            let viewActionsHandler = ListingViewActionsCompositeHandler(handlers: [router,analyticsHandler])
+            let vc = ListingWithDetailViewController(actionsHandler: viewActionsHandler)
+
+            //To load data
+            let api = RemoteFeedLoaderAdapter(apiClient: NewsClient())
+            let cache = LocalFeedLoaderAdapter(cache: CacheDataManager.shared)
+            let feedLoader = CompositeFeedLoaderWithFallback(primary: cache, fallback: api)
+            vc.service = feedLoader
+            vc.title = "Listing Page"
+            return vc
+        case .detailPage:
+            let vc = DetailPageViewController(nibName: DetailPageViewController.className, bundle: nil)
+            vc.title = "Detail Page"
             return vc
         }
     }

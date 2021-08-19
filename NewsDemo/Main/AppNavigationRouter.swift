@@ -11,12 +11,20 @@ import UIKit
 
 final class AppNavigationRouter {
     
-    private var factory: ViewComposableFactory
-    private var navigation: UINavigationController
+    private(set) var factory: ViewComposableFactory
+    private(set) var navigation: UINavigationController
     
     init(viewFactory: ViewComposableFactory, navigation: UINavigationController) {
         self.factory = viewFactory
         self.navigation = navigation
+    }
+    
+    func pushViewController(_ viewController: UIViewController, animated: Bool = true) {
+        navigation.pushViewController(viewController, animated: animated)
+    }
+    
+    func presentViewController(_ viewController: UIViewController, animated: Bool = true) {
+        navigation.visibleViewController?.present(viewController, animated: animated)
     }
     
     func setRootViewController(_ vc: UIViewController, _ animated: Bool = true ) {
@@ -26,7 +34,7 @@ final class AppNavigationRouter {
     }
     
     func showNewsListing() {
-        let listingVC = factory.composeView(type: .newsListingWithMutlipleRetry)
+        let listingVC = factory.composeView(type: .newsListingWithDetail)
         setRootViewController(listingVC)
     }
 }

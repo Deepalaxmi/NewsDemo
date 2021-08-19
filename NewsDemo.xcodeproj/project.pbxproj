@@ -33,6 +33,13 @@
 		CE6E9E5826CE278E00D70945 /* RemoteFeedLoaderAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E9E5726CE278E00D70945 /* RemoteFeedLoaderAdapter.swift */; };
 		CE6E9E5A26CE27F400D70945 /* LocalFeedLoaderAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E9E5926CE27F400D70945 /* LocalFeedLoaderAdapter.swift */; };
 		CE6E9E5C26CE28C900D70945 /* CompositeFeedLoaderWithFallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E9E5B26CE28C900D70945 /* CompositeFeedLoaderWithFallback.swift */; };
+		CE6E9E5F26CE51D600D70945 /* ListingWithDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E9E5D26CE51D600D70945 /* ListingWithDetailViewController.swift */; };
+		CE6E9E6026CE51D600D70945 /* ListingWithDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6E9E5E26CE51D600D70945 /* ListingWithDetailViewController.xib */; };
+		CE6E9E6326CE571500D70945 /* ListingViewActionsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E9E6226CE571500D70945 /* ListingViewActionsHandler.swift */; };
+		CE6E9E6526CE602900D70945 /* AnalyticsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E9E6426CE602900D70945 /* AnalyticsAdapter.swift */; };
+		CE6E9E6726CE615100D70945 /* AppNavigationRouter+ViewActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E9E6626CE615100D70945 /* AppNavigationRouter+ViewActions.swift */; };
+		CE6E9E6A26CE622B00D70945 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E9E6826CE622B00D70945 /* DetailPageViewController.swift */; };
+		CE6E9E6B26CE622B00D70945 /* DetailPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6E9E6926CE622B00D70945 /* DetailPageViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +92,13 @@
 		CE6E9E5726CE278E00D70945 /* RemoteFeedLoaderAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoaderAdapter.swift; sourceTree = "<group>"; };
 		CE6E9E5926CE27F400D70945 /* LocalFeedLoaderAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedLoaderAdapter.swift; sourceTree = "<group>"; };
 		CE6E9E5B26CE28C900D70945 /* CompositeFeedLoaderWithFallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeFeedLoaderWithFallback.swift; sourceTree = "<group>"; };
+		CE6E9E5D26CE51D600D70945 /* ListingWithDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingWithDetailViewController.swift; sourceTree = "<group>"; };
+		CE6E9E5E26CE51D600D70945 /* ListingWithDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListingWithDetailViewController.xib; sourceTree = "<group>"; };
+		CE6E9E6226CE571500D70945 /* ListingViewActionsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewActionsHandler.swift; sourceTree = "<group>"; };
+		CE6E9E6426CE602900D70945 /* AnalyticsAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsAdapter.swift; sourceTree = "<group>"; };
+		CE6E9E6626CE615100D70945 /* AppNavigationRouter+ViewActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppNavigationRouter+ViewActions.swift"; sourceTree = "<group>"; };
+		CE6E9E6826CE622B00D70945 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
+		CE6E9E6926CE622B00D70945 /* DetailPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPageViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +149,7 @@
 		B7EDB4DD21CBEB1F00525294 /* NewsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CE6E9E6126CE56E200D70945 /* Handlers */,
 				B7EDB51D21CBEF6200525294 /* Model */,
 				CE6E9E5226CE19F700D70945 /* Main */,
 				B7EDB52B21CBF72700525294 /* Views */,
@@ -212,6 +227,10 @@
 			isa = PBXGroup;
 			children = (
 				B7EDB4E021CBEB1F00525294 /* ListingViewController.swift */,
+				CE6E9E5D26CE51D600D70945 /* ListingWithDetailViewController.swift */,
+				CE6E9E5E26CE51D600D70945 /* ListingWithDetailViewController.xib */,
+				CE6E9E6826CE622B00D70945 /* DetailPageViewController.swift */,
+				CE6E9E6926CE622B00D70945 /* DetailPageViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -244,6 +263,16 @@
 				CE6E9E5B26CE28C900D70945 /* CompositeFeedLoaderWithFallback.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		CE6E9E6126CE56E200D70945 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				CE6E9E6226CE571500D70945 /* ListingViewActionsHandler.swift */,
+				CE6E9E6426CE602900D70945 /* AnalyticsAdapter.swift */,
+				CE6E9E6626CE615100D70945 /* AppNavigationRouter+ViewActions.swift */,
+			);
+			path = Handlers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,7 +379,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6E9E6026CE51D600D70945 /* ListingWithDetailViewController.xib in Resources */,
 				B7EDB4EC21CBEB2200525294 /* LaunchScreen.storyboard in Resources */,
+				CE6E9E6B26CE622B00D70945 /* DetailPageViewController.xib in Resources */,
 				B7EDB4E921CBEB2200525294 /* Assets.xcassets in Resources */,
 				B7EDB52A21CBF71600525294 /* NewsTableViewCell.xib in Resources */,
 				B7EDB4E421CBEB1F00525294 /* Main.storyboard in Resources */,
@@ -379,11 +410,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7EDB4E121CBEB1F00525294 /* ListingViewController.swift in Sources */,
+				CE6E9E6726CE615100D70945 /* AppNavigationRouter+ViewActions.swift in Sources */,
 				B7EDB53321CC105B00525294 /* CacheDataManager.swift in Sources */,
 				B7EDB51F21CBEF6F00525294 /* NewsItemViewModel.swift in Sources */,
+				CE6E9E6526CE602900D70945 /* AnalyticsAdapter.swift in Sources */,
+				CE6E9E6A26CE622B00D70945 /* DetailPageViewController.swift in Sources */,
 				B7EDB52421CBF48400525294 /* UIViewController.swift in Sources */,
+				CE6E9E6326CE571500D70945 /* ListingViewActionsHandler.swift in Sources */,
 				B7EDB52921CBF71600525294 /* NewsTableViewCell.swift in Sources */,
 				B7EDB51521CBECFC00525294 /* NewsClient.swift in Sources */,
+				CE6E9E5F26CE51D600D70945 /* ListingWithDetailViewController.swift in Sources */,
 				CE6E9E5426CE1A0700D70945 /* ViewControllerFactory.swift in Sources */,
 				CE6E9E5626CE1F6F00D70945 /* AppNavigationRouter.swift in Sources */,
 				B7EDB53521CC226D00525294 /* Helper.swift in Sources */,
