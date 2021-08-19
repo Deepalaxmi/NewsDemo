@@ -40,6 +40,8 @@
 		CE6E9E6726CE615100D70945 /* AppNavigationRouter+ViewActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E9E6626CE615100D70945 /* AppNavigationRouter+ViewActions.swift */; };
 		CE6E9E6A26CE622B00D70945 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E9E6826CE622B00D70945 /* DetailPageViewController.swift */; };
 		CE6E9E6B26CE622B00D70945 /* DetailPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6E9E6926CE622B00D70945 /* DetailPageViewController.xib */; };
+		CE6E9E6E26CE6B6800D70945 /* GoogleAnalyticsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E9E6D26CE6B6800D70945 /* GoogleAnalyticsTracker.swift */; };
+		CE6E9E7026CE6C5300D70945 /* FirerbaseTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E9E6F26CE6C5300D70945 /* FirerbaseTracker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,8 @@
 		CE6E9E6626CE615100D70945 /* AppNavigationRouter+ViewActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppNavigationRouter+ViewActions.swift"; sourceTree = "<group>"; };
 		CE6E9E6826CE622B00D70945 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 		CE6E9E6926CE622B00D70945 /* DetailPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPageViewController.xib; sourceTree = "<group>"; };
+		CE6E9E6D26CE6B6800D70945 /* GoogleAnalyticsTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAnalyticsTracker.swift; sourceTree = "<group>"; };
+		CE6E9E6F26CE6C5300D70945 /* FirerbaseTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirerbaseTracker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 		B7EDB4DD21CBEB1F00525294 /* NewsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CE6E9E6C26CE6B1600D70945 /* Analytics */,
 				CE6E9E6126CE56E200D70945 /* Handlers */,
 				B7EDB51D21CBEF6200525294 /* Model */,
 				CE6E9E5226CE19F700D70945 /* Main */,
@@ -269,10 +274,19 @@
 			isa = PBXGroup;
 			children = (
 				CE6E9E6226CE571500D70945 /* ListingViewActionsHandler.swift */,
-				CE6E9E6426CE602900D70945 /* AnalyticsAdapter.swift */,
 				CE6E9E6626CE615100D70945 /* AppNavigationRouter+ViewActions.swift */,
 			);
 			path = Handlers;
+			sourceTree = "<group>";
+		};
+		CE6E9E6C26CE6B1600D70945 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				CE6E9E6426CE602900D70945 /* AnalyticsAdapter.swift */,
+				CE6E9E6D26CE6B6800D70945 /* GoogleAnalyticsTracker.swift */,
+				CE6E9E6F26CE6C5300D70945 /* FirerbaseTracker.swift */,
+			);
+			path = Analytics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +427,7 @@
 				CE6E9E6726CE615100D70945 /* AppNavigationRouter+ViewActions.swift in Sources */,
 				B7EDB53321CC105B00525294 /* CacheDataManager.swift in Sources */,
 				B7EDB51F21CBEF6F00525294 /* NewsItemViewModel.swift in Sources */,
+				CE6E9E7026CE6C5300D70945 /* FirerbaseTracker.swift in Sources */,
 				CE6E9E6526CE602900D70945 /* AnalyticsAdapter.swift in Sources */,
 				CE6E9E6A26CE622B00D70945 /* DetailPageViewController.swift in Sources */,
 				B7EDB52421CBF48400525294 /* UIViewController.swift in Sources */,
@@ -425,6 +440,7 @@
 				B7EDB53521CC226D00525294 /* Helper.swift in Sources */,
 				B7EDB51921CBEDC800525294 /* Endpoint.swift in Sources */,
 				B7EDB53121CC0DBF00525294 /* CustomImageView.swift in Sources */,
+				CE6E9E6E26CE6B6800D70945 /* GoogleAnalyticsTracker.swift in Sources */,
 				B7EDB4E721CBEB1F00525294 /* NewsDemo.xcdatamodeld in Sources */,
 				B7EDB52D21CBFF9D00525294 /* Date.swift in Sources */,
 				CE6E9E5A26CE27F400D70945 /* LocalFeedLoaderAdapter.swift in Sources */,

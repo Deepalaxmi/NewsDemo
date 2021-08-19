@@ -10,7 +10,7 @@ import Foundation
 
 final class AnalyticsAdapter {
     
-    func sendEvent(_ param: String) {
+    private func sendEvent(_ param: String) {
         print("sending some parameters with \(param)")
     }
 }

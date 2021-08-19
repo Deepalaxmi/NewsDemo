@@ -52,13 +52,16 @@ final class ViewComposerFactory: ViewComposableFactory {
             let cache = LocalFeedLoaderAdapter(cache: CacheDataManager.shared)
             vc.service = api.retry(3).fallback(cache)
             return vc
+            
         case .newsListingWithDetail:
 //            let vc = ListingWithDetailViewController(nibName: ListingWithDetailViewController.className, bundle: nil)
             
-            //action handlers
+            //view action handlers
             let router = AppDelegate.shared.navigationRouter
             let analyticsHandler = AnalyticsAdapter()
-            let viewActionsHandler = ListingViewActionsCompositeHandler(handlers: [router,analyticsHandler])
+            let googleAnalytics = GoogleAnalyticsTracker()
+            let firebasehandler = FirerbaseTracker()
+            let viewActionsHandler = ListingViewActionsCompositeHandler(handlers: [router,analyticsHandler,googleAnalytics,firebasehandler])
             let vc = ListingWithDetailViewController(actionsHandler: viewActionsHandler)
 
             //To load data
@@ -68,6 +71,7 @@ final class ViewComposerFactory: ViewComposableFactory {
             vc.service = feedLoader
             vc.title = "Listing Page"
             return vc
+            
         case .detailPage:
             let vc = DetailPageViewController(nibName: DetailPageViewController.className, bundle: nil)
             vc.title = "Detail Page"
